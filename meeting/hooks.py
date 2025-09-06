@@ -1,3 +1,6 @@
+from . import __version__ as app_version
+from .api import auth
+
 app_name = "meeting"
 app_title = "Meeting"
 app_publisher = "Frappe"
@@ -170,7 +173,9 @@ app_license = "mit"
 # ------------------------------
 #
 # override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "meeting.event.get_events"
+# 	"meeting.api.auth.login" : api.auth.login,
+#     "meeting.api.auth.signup" : api.auth.signup,
+#     "meeting.api.auth.logout" : api.auth.logout,
 # }
 #
 # each overriding function accepts a `data` argument;
@@ -226,9 +231,7 @@ app_license = "mit"
 # Authentication and authorization
 # --------------------------------
 
-# auth_hooks = [
-# 	"meeting.auth.validate"
-# ]
+auth_hooks = ["meeting.api.auth.validate_bearer_token"]
 
 # Automatically update python controller files with type annotations for this app.
 # export_python_type_annotations = True
@@ -236,4 +239,3 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
