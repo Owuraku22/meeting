@@ -1,3 +1,5 @@
+import frappe
+
 from . import __version__ as app_version
 from .api import auth
 
@@ -231,7 +233,7 @@ app_license = "mit"
 # Authentication and authorization
 # --------------------------------
 
-auth_hooks = ["meeting.api.auth.validate_bearer_token"]
+# auth_hooks = ["meeting.api.auth.validate_bearer_token"]
 
 # Automatically update python controller files with type annotations for this app.
 # export_python_type_annotations = True
