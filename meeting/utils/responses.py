@@ -4,7 +4,7 @@ import frappe
 
 
 def success_response(
-	data: Optional, message: str = "Success", status_code: int = 200, meta: dict | None = None
+	data: Optional, message: str = "Request Successful", status_code: int = 200, meta: dict | None = None
 ) -> dict[str, Any]:
 	"""Standardized success response format"""
 
